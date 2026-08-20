@@ -1,0 +1,18 @@
+{
+  "id": "zibata",
+  "name": "Zibatá Golf Club",
+  "nameConfirmed": true,
+  "location": "Querétaro, QRO",
+  "tees": [
+    {
+      "id": "white",
+      "name": "White",
+      "color": "#F5F3EE"
+    }
+  ],
+  "holes": [],
+  "dataQuality": "EMPTY",
+  "source": "BUNDLED",
+  "notes": "SIN DATOS. No se invento nada. Cargar con COURSE BUILDER.",
+  "updatedAt": "2026-01-01T00:00:00.000Z"
+}

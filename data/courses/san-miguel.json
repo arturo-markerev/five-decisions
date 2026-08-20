@@ -1,0 +1,18 @@
+{
+  "id": "san-miguel",
+  "name": "Club de Golf Malanquín — San Miguel de Allende",
+  "nameConfirmed": false,
+  "location": "San Miguel de Allende, GTO",
+  "tees": [
+    {
+      "id": "white",
+      "name": "White",
+      "color": "#F5F3EE"
+    }
+  ],
+  "holes": [],
+  "dataQuality": "EMPTY",
+  "source": "BUNDLED",
+  "notes": "NOMBRE POR CONFIRMAR y SIN DATOS. No se invento nada. Editable en COURSES.",
+  "updatedAt": "2026-01-01T00:00:00.000Z"
+}
