@@ -3,6 +3,7 @@ import type {
   Confidence,
   DecisionAlternative,
   FlagPosition,
+  GreenSide,
   Hole,
   HoleClubLearning,
   Lie,
@@ -13,7 +14,12 @@ import type {
   ShotIntent,
   TigerFiveKey,
 } from "@/types/golf";
-import { buildDispersion, patternWidth } from "@/lib/dispersion-engine";
+import {
+  LIE_DISPERSION_FACTOR,
+  LIE_DISTANCE_FACTOR,
+  buildDispersion,
+  patternWidth,
+} from "@/lib/dispersion-engine";
 import { costBand, expectedStrokes } from "@/lib/distance-engine";
 import {
   classifyLanding,
@@ -63,9 +69,70 @@ interface OptionResult {
   isApproach: boolean;
 }
 
+/**
+ * AVERSION A LA PENALIDAD.
+ *
+ * El costo esperado puro trata una penalidad como "+1 golpe promedio". Para un
+ * H18 casi nunca cuesta 1: cuesta el golpe, cuesta la posicion, y cuesta el
+ * doble que viene detras. Por eso dos opciones con el MISMO costo esperado no
+ * son la misma decision si una mete el 9% del patron en el agua.
+ *
+ * Este termino rompe esos empates siempre hacia el lado sin penalidad. Es la
+ * GOLDEN RULE dentro de la funcion de costo, no solo en el texto que se muestra.
+ */
+const PENALTY_AVERSION = 1.1;
+
 const CORRIDOR_AIMS = [-22, -14, -7, 0, 7, 14, 22];
 const APPROACH_AIMS = [-14, -10, -6, -3, 0, 3, 6, 10, 14];
 const APPROACH_DEPTHS = [-7, -3, 0];
+
+
+type Side = "LEFT" | "RIGHT" | "SHORT" | "LONG" | "NONE";
+
+/**
+ * LADO CARO / LADO JUGABLE.
+ *
+ * El miss caro es una propiedad del HOYO, no de la punteria. Si el agua esta a
+ * la izquierda, la izquierda sigue siendo el miss que mata aunque ya estemos
+ * apuntando a la derecha para evitarla — de hecho por eso apuntamos ahi.
+ * Calcular esto sobre el patron ya desplazado invertia el consejo: "safe miss
+ * derecha" con el agua a la izquierda es como se firma un doble.
+ *
+ * Se sondea el hoyo a la distancia planeada, con misses del tamano real de la
+ * dispersion del palo.
+ */
+const MISS_PROBES = [
+  { magnitude: 0.5, weight: 0.35 },
+  { magnitude: 0.8, weight: 0.4 },
+  { magnitude: 1, weight: 0.25 },
+];
+
+function corridorSides(
+  hole: Hole,
+  club: Club,
+  lie: Lie,
+  distanceFromTee: number,
+): { worst: Side; best: Side } {
+  const carry = club.planningDistance * LIE_DISTANCE_FACTOR[lie];
+  const dft = distanceFromTee + carry;
+  const dispFactor = LIE_DISPERSION_FACTOR[lie];
+
+  const sideCost = (dispersion: number, sign: -1 | 1): number => {
+    let acc = 0;
+    for (const probe of MISS_PROBES) {
+      const lateral = sign * dispersion * dispFactor * probe.magnitude;
+      const out = classifyLanding(hole, dft, lateral);
+      acc += (1 + out.penalty + expectedStrokes(out.remainingDistance, out.lie)) * probe.weight;
+    }
+    return acc;
+  };
+
+  const left = sideCost(club.leftDispersionYards, -1);
+  const right = sideCost(club.rightDispersionYards, 1);
+  const diff = right - left;
+  if (Math.abs(diff) < 0.05) return { worst: "NONE", best: "NONE" };
+  return diff > 0 ? { worst: "RIGHT", best: "LEFT" } : { worst: "LEFT", best: "RIGHT" };
+}
 
 function playableClubs(profile: PlayerProfile): Club[] {
   return profile.clubs.filter((c) => c.enabled && c.category !== "PUTTER" && c.planningDistance > 0);
@@ -87,10 +154,6 @@ function evaluateCorridor(
   let penaltyProb = 0;
   let fairwayProb = 0;
   let remaining = 0;
-  let leftCost = 0;
-  let rightCost = 0;
-  let leftW = 0;
-  let rightW = 0;
 
   for (const s of samples) {
     const dft = distanceFromTee + s.carry;
@@ -100,30 +163,22 @@ function evaluateCorridor(
     remaining += outcome.remainingDistance * s.weight;
     if (outcome.penalty > 0) penaltyProb += s.weight;
     if (outcome.lie === "FAIRWAY" || outcome.lie === "GREEN") fairwayProb += s.weight;
-    if (s.lateral < -1) {
-      leftCost += c * s.weight;
-      leftW += s.weight;
-    } else if (s.lateral > 1) {
-      rightCost += c * s.weight;
-      rightW += s.weight;
-    }
   }
 
-  const l = leftW > 0 ? leftCost / leftW : cost;
-  const r = rightW > 0 ? rightCost / rightW : cost;
-  const diff = r - l;
+  const sides = corridorSides(hole, club, lie, distanceFromTee);
 
   return {
     club,
     aimOffset,
     aimDistance: club.planningDistance,
-    cost,
+    // penaltyProbability se reporta crudo; la aversion solo entra al comparar.
+    cost: cost + PENALTY_AVERSION * penaltyProb,
     penaltyProbability: penaltyProb,
     fairwayProbability: fairwayProb,
     greenProbability: 0,
     expectedRemaining: remaining,
-    worstSide: Math.abs(diff) < 0.05 ? "NONE" : diff > 0 ? "RIGHT" : "LEFT",
-    bestSide: Math.abs(diff) < 0.05 ? "NONE" : diff > 0 ? "LEFT" : "RIGHT",
+    worstSide: sides.worst,
+    bestSide: sides.best,
     isApproach: false,
   };
 }
@@ -131,6 +186,141 @@ function evaluateCorridor(
 /* ------------------------------------------------------------------ */
 /* Evaluacion approach (al green)                                      */
 /* ------------------------------------------------------------------ */
+
+
+interface GreenPoint {
+  side: Side;
+  onGreen: boolean;
+  penalty: number;
+  distToFlag: number;
+  cost: number;
+}
+
+type GreensideMap = Record<GreenSide, { severity: string; penalty: number } | null>;
+
+/**
+ * Clasifica UN punto alrededor del green y le pone precio.
+ * Lo usan tanto el patron de dispersion como la sonda de lados, para que el
+ * "safe miss" que se muestra y el costo que se optimiza hablen del mismo green.
+ *
+ * lateralPos / depthPos van respecto del CENTRO del green (+ = derecha / atras).
+ */
+function classifyGreenPoint(
+  hole: Hole,
+  geo: { lateral: number; depth: number },
+  sides: GreensideMap,
+  ballFromTee: number,
+  centerDistance: number,
+  lateralPos: number,
+  depthPos: number,
+): GreenPoint {
+  const halfW = hole.greenWidth / 2;
+  const halfD = hole.greenDepth / 2;
+  const onGreen = Math.abs(lateralPos) <= halfW && Math.abs(depthPos) <= halfD;
+
+  let side: Side = "NONE";
+  if (!onGreen) {
+    const exLat = Math.abs(lateralPos) - halfW;
+    const exDep = Math.abs(depthPos) - halfD;
+    if (exLat >= exDep) side = lateralPos < 0 ? "LEFT" : "RIGHT";
+    else side = depthPos < 0 ? "SHORT" : "LONG";
+  }
+
+  // Hazard del corridor primero (agua corta, OB largo, etc.)
+  const dft = ballFromTee + centerDistance + depthPos;
+  const hz = findHazard(hole, dft, lateralPos);
+
+  let lieOut: Lie;
+  let penalty = 0;
+
+  if (hz && !onGreen) {
+    penalty = effectivePenalty(hz);
+    lieOut =
+      hz.type === "BUNKER"
+        ? "BUNKER"
+        : hz.type === "TREES"
+          ? "TREES"
+          : hz.type === "RECOVERY"
+            ? "RECOVERY"
+            : "LIGHT_ROUGH";
+  } else if (onGreen) {
+    lieOut = "GREEN";
+  } else {
+    const g = side !== "NONE" ? sides[side] : null;
+    const excess = Math.max(Math.abs(lateralPos) - halfW, Math.abs(depthPos) - halfD);
+    if (g && g.penalty > 0) {
+      penalty = g.penalty;
+      lieOut = "LIGHT_ROUGH";
+    } else if (g) {
+      lieOut = g.severity === "EXTREME" || g.severity === "HIGH" ? "BUNKER" : "LIGHT_ROUGH";
+    } else {
+      lieOut = excess <= 8 ? "LIGHT_ROUGH" : "HEAVY_ROUGH";
+    }
+  }
+
+  const distToFlag = Math.max(
+    onGreen ? 1 : 3,
+    Math.hypot(lateralPos - geo.lateral, depthPos - geo.depth),
+  );
+
+  return {
+    side,
+    onGreen,
+    penalty,
+    distToFlag,
+    cost: 1 + penalty + expectedStrokes(distToFlag, lieOut),
+  };
+}
+
+/**
+ * Que lado del green es el miss caro. Igual que en el corridor: es geometria
+ * del hoyo, no de la punteria. Se sondea un miss justo afuera de cada borde.
+ */
+function greenSides(
+  hole: Hole,
+  geo: { lateral: number; depth: number },
+  sides: GreensideMap,
+  ballFromTee: number,
+  centerDistance: number,
+): { worst: Side; best: Side } {
+  const halfW = hole.greenWidth / 2;
+  const halfD = hole.greenDepth / 2;
+  const OUT = 6;
+
+  const probes: Array<{ side: GreenSide; lateral: number; depth: number }> = [
+    { side: "LEFT", lateral: -(halfW + OUT), depth: geo.depth },
+    { side: "RIGHT", lateral: halfW + OUT, depth: geo.depth },
+    { side: "SHORT", lateral: geo.lateral, depth: -(halfD + OUT) },
+    { side: "LONG", lateral: geo.lateral, depth: halfD + OUT },
+  ];
+
+  let worst: Side = "NONE";
+  let best: Side = "NONE";
+  let worstVal = -Infinity;
+  let bestVal = Infinity;
+
+  for (const probe of probes) {
+    const pt = classifyGreenPoint(
+      hole,
+      geo,
+      sides,
+      ballFromTee,
+      centerDistance,
+      probe.lateral,
+      probe.depth,
+    );
+    if (pt.cost > worstVal) {
+      worstVal = pt.cost;
+      worst = probe.side;
+    }
+    if (pt.cost < bestVal) {
+      bestVal = pt.cost;
+      best = probe.side;
+    }
+  }
+
+  return { worst, best };
+}
 
 function evaluateApproach(
   hole: Hole,
@@ -154,102 +344,26 @@ function evaluateApproach(
   let penaltyProb = 0;
   let greenProb = 0;
   let remaining = 0;
-  const sideCost: Record<string, { c: number; w: number }> = {
-    LEFT: { c: 0, w: 0 },
-    RIGHT: { c: 0, w: 0 },
-    SHORT: { c: 0, w: 0 },
-    LONG: { c: 0, w: 0 },
-  };
 
   for (const s of samples) {
     // Posicion respecto del CENTRO del green.
     const depthPos = s.carry - centerDistance;
     const lateralPos = geo.lateral + aimLateral + s.lateral;
+    const pt = classifyGreenPoint(hole, geo, sides, ballFromTee, centerDistance, lateralPos, depthPos);
 
-    let lieOut: Lie;
-    let penalty = 0;
-
-    // Hazard del corridor primero (agua corta, OB largo, etc.)
-    const dft = ballFromTee + s.carry;
-    const hz = findHazard(hole, dft, lateralPos);
-
-    const halfW = hole.greenWidth / 2;
-    const halfD = hole.greenDepth / 2;
-    const onGreen = Math.abs(lateralPos) <= halfW && Math.abs(depthPos) <= halfD;
-
-    let side: "LEFT" | "RIGHT" | "SHORT" | "LONG" | "NONE" = "NONE";
-    if (!onGreen) {
-      const exLat = Math.abs(lateralPos) - halfW;
-      const exDep = Math.abs(depthPos) - halfD;
-      if (exLat >= exDep) side = lateralPos < 0 ? "LEFT" : "RIGHT";
-      else side = depthPos < 0 ? "SHORT" : "LONG";
-    }
-
-    if (hz && !onGreen) {
-      penalty = effectivePenalty(hz);
-      lieOut =
-        hz.type === "BUNKER"
-          ? "BUNKER"
-          : hz.type === "TREES"
-            ? "TREES"
-            : hz.type === "RECOVERY"
-              ? "RECOVERY"
-              : "LIGHT_ROUGH";
-    } else if (onGreen) {
-      lieOut = "GREEN";
-    } else {
-      const g = side !== "NONE" ? sides[side] : null;
-      const excess = Math.max(
-        Math.abs(lateralPos) - halfW,
-        Math.abs(depthPos) - halfD,
-      );
-      if (g && g.penalty > 0) {
-        penalty = g.penalty;
-        lieOut = "LIGHT_ROUGH";
-      } else if (g) {
-        lieOut = g.severity === "EXTREME" || g.severity === "HIGH" ? "BUNKER" : "LIGHT_ROUGH";
-      } else {
-        lieOut = excess <= 8 ? "LIGHT_ROUGH" : "HEAVY_ROUGH";
-      }
-    }
-
-    const distToFlag = onGreen
-      ? Math.max(1, Math.hypot(lateralPos - geo.lateral, depthPos - geo.depth))
-      : Math.max(3, Math.hypot(lateralPos - geo.lateral, depthPos - geo.depth));
-
-    const c = 1 + penalty + expectedStrokes(distToFlag, lieOut);
-    cost += c * s.weight;
-    remaining += distToFlag * s.weight;
-    if (penalty > 0) penaltyProb += s.weight;
-    if (onGreen) greenProb += s.weight;
-    if (side !== "NONE") {
-      sideCost[side].c += c * s.weight;
-      sideCost[side].w += s.weight;
-    }
+    cost += pt.cost * s.weight;
+    remaining += pt.distToFlag * s.weight;
+    if (pt.penalty > 0) penaltyProb += s.weight;
+    if (pt.onGreen) greenProb += s.weight;
   }
 
-  let worst: OptionResult["worstSide"] = "NONE";
-  let best: OptionResult["bestSide"] = "NONE";
-  let worstVal = -Infinity;
-  let bestVal = Infinity;
-  (["LEFT", "RIGHT", "SHORT", "LONG"] as const).forEach((k) => {
-    if (sideCost[k].w < 0.04) return;
-    const avg = sideCost[k].c / sideCost[k].w;
-    if (avg > worstVal) {
-      worstVal = avg;
-      worst = k;
-    }
-    if (avg < bestVal) {
-      bestVal = avg;
-      best = k;
-    }
-  });
+  const { worst, best } = greenSides(hole, geo, sides, ballFromTee, centerDistance);
 
   return {
     club,
     aimOffset: aimLateral,
     aimDistance,
-    cost,
+    cost: cost + PENALTY_AVERSION * penaltyProb,
     penaltyProbability: penaltyProb,
     fairwayProbability: 0,
     greenProbability: greenProb,
