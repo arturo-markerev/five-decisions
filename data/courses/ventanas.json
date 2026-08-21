@@ -254,7 +254,7 @@
       "layupZones": [],
       "preferredLandingZones": [],
       "elevationChangeYards": 0,
-      "strategicNotes": "Tarjeta oficial: par 5 (impreso 4/5, hoyo de par dual), HCP 15, 411 yd blancas. Geometria (calle, green, hazards) PENDIENTE de levantamiento. Corredor neutro por ahora.",
+      "strategicNotes": "CONFLICTO ABIERTO en el yardaje de blancas: la tarjeta impresa dice 411 y solo con 411 cuadra su propio OUT de 3051; las apps GPS dicen 431. Aqui se guarda 411 (la tarjeta del club manda). Par impreso 4/5, hoyo de par dual. HCP 15. Geometria PENDIENTE.",
       "dataQuality": "PARTIAL",
       "teeCoordinates": null,
       "greenCenter": null,
@@ -614,7 +614,7 @@
       "layupZones": [],
       "preferredLandingZones": [],
       "elevationChangeYards": 0,
-      "strategicNotes": "Tarjeta oficial: par 4, HCP 2, 474 yd blancas. Yardaje de blancas SIN confirmar: el hoyo 18 quedo fuera de la foto. Geometria (calle, green, hazards) PENDIENTE de levantamiento. Corredor neutro por ahora.",
+      "strategicNotes": "Tarjeta oficial: par 4, HCP 2, 474 yd blancas. Confirmado tambien en la app GPS del jugador. Geometria (calle, green, hazards) PENDIENTE de levantamiento. Corredor neutro por ahora.",
       "dataQuality": "PARTIAL",
       "teeCoordinates": null,
       "greenCenter": null,
@@ -625,6 +625,6 @@
   ],
   "dataQuality": "PARTIAL",
   "source": "BUNDLED",
-  "notes": "Scorecard REAL, capturado de la tarjeta fisica del club (par, handicap y los 5 tees). Hoyo 7 viene impreso como par 4/5: la tarjeta suma OUT 36 contandolo como 5, el club publicita el campo como par 70 contandolo como 4. Aqui se guarda como 5. Hoyo 18: par 4 y HCP 2 deducidos de los totales impresos; su yardaje falta confirmar. Altitud del campo: 1904-1919 m (SRTM). La bola vuela ~12% mas que a nivel del mar. La GEOMETRIA (ancho de calle, bunkers, agua, greens) NO es real todavia: corredor neutro sin hazards. OpenStreetMap tiene el perimetro del campo pero ningun hoyo, green ni bunker trazado.",
-  "updatedAt": "2026-08-21T03:58:59.981Z"
+  "notes": "Scorecard REAL, capturado de la tarjeta fisica del club (par, handicap y los 5 tees). Hoyo 7 viene impreso como par 4/5: la tarjeta suma OUT 36 contandolo como 5, el club publicita el campo como par 70 contandolo como 4. Aqui se guarda como 5. Hoyo 18 CONFIRMADO (par 4, HCP 2, 474 blancas) contra la app GPS. Altitud del campo: 1904-1919 m (SRTM). La bola vuela ~12% mas que a nivel del mar. Hoyo 7: la tarjeta dice 411 blancas, las apps GPS dicen 431. Sin resolver. La GEOMETRIA (ancho de calle, bunkers, agua, greens) NO es real todavia: corredor neutro sin hazards. OJO: OSM no tiene agua mapeada aqui, pero el satelite SI muestra agua (hoyos 10, 17, 18 entre otros). Ausencia de dato no es ausencia de hazard.",
+  "updatedAt": "2026-08-21T04:07:18.261Z"
 }
