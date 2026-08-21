@@ -254,7 +254,7 @@
       "layupZones": [],
       "preferredLandingZones": [],
       "elevationChangeYards": 0,
-      "strategicNotes": "CONFLICTO ABIERTO en el yardaje de blancas: la tarjeta impresa dice 411 y solo con 411 cuadra su propio OUT de 3051; las apps GPS dicen 431. Aqui se guarda 411 (la tarjeta del club manda). Par impreso 4/5, hoyo de par dual. HCP 15. Geometria PENDIENTE.",
+      "strategicNotes": "Tarjeta oficial: par 4/5 (hoyo de par dual, aqui se guarda como 5), HCP 15, 411 yd blancas. El jugador confirmo 411 leyendo la tarjeta: las apps GPS dicen 431 y estan mal — con 431 el OUT impreso de 3051 no cuadra. Green defendido por bunkers; falta registrar de que lado. Geometria de calle PENDIENTE.",
       "dataQuality": "PARTIAL",
       "teeCoordinates": null,
       "greenCenter": null,
@@ -664,6 +664,6 @@
   ],
   "dataQuality": "PARTIAL",
   "source": "BUNDLED",
-  "notes": "Scorecard REAL, capturado de la tarjeta fisica del club (par, handicap y los 5 tees). Hoyo 7 viene impreso como par 4/5: la tarjeta suma OUT 36 contandolo como 5, el club publicita el campo como par 70 contandolo como 4. Aqui se guarda como 5. Hoyo 18 CONFIRMADO (par 4, HCP 2, 474 blancas) contra la app GPS. Altitud del campo: 1904-1919 m (SRTM). La bola vuela ~12% mas que a nivel del mar. Hoyo 7: la tarjeta dice 411 blancas, las apps GPS dicen 431. Sin resolver. La GEOMETRIA (ancho de calle, bunkers, agua, greens) NO es real todavia: corredor neutro sin hazards. AGUA junto al green confirmada por el jugador en 10 (derecha), 17 (derecha) y 18 (derecha y fondo). Los demas greens estan defendidos por bunkers, pero falta el lado: un bunker sin lado no le sirve al motor, asi que no se cargo ninguno. OSM no tiene esta agua mapeada; ausencia de dato no es ausencia de hazard.",
-  "updatedAt": "2026-08-21T04:11:12.039Z"
+  "notes": "Scorecard REAL, capturado de la tarjeta fisica del club (par, handicap y los 5 tees). Hoyo 7 viene impreso como par 4/5: la tarjeta suma OUT 36 contandolo como 5, el club publicita el campo como par 70 contandolo como 4. Aqui se guarda como 5. Hoyo 18 CONFIRMADO (par 4, HCP 2, 474 blancas) contra la app GPS. Altitud del campo: 1904-1919 m (SRTM). La bola vuela ~12% mas que a nivel del mar. Hoyo 7: 411 blancas, confirmado por el jugador contra la tarjeta. Las apps GPS dicen 431 y estan equivocadas. La GEOMETRIA (ancho de calle, bunkers, agua, greens) NO es real todavia: corredor neutro sin hazards. AGUA junto al green confirmada por el jugador en 10 (derecha), 17 (derecha) y 18 (derecha y fondo). Los demas greens estan defendidos por bunkers, pero falta el lado: un bunker sin lado no le sirve al motor, asi que no se cargo ninguno. OSM no tiene esta agua mapeada; ausencia de dato no es ausencia de hazard.",
+  "updatedAt": "2026-08-21T04:13:12.389Z"
 }
