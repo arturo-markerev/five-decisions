@@ -4,6 +4,13 @@ import type { Club, PlayerProfile } from "@/types/golf";
  * Distancias EXACTAS entregadas por el jugador.
  * Las dispersiones son ESTIMATE — NEEDS REAL DATA.
  * El motor solo planifica con planningDistance.
+ *
+ * ALTITUD — ya viene incluida, NO aplicar correccion.
+ * Estas distancias las midio el jugador con 18Birdies jugando en Queretaro
+ * (~1820 m) y San Miguel de Allende (~1900 m). A esa altura la bola vuela
+ * ~12% mas que a nivel del mar, y ese 12% YA ESTA dentro de estos numeros.
+ * Si algun dia se cargan distancias de simulador o de un campo bajo, hay que
+ * subirlas antes de mezclarlas con estas.
  */
 
 type ClubSeed = {
