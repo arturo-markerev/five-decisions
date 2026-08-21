@@ -112,8 +112,10 @@ export default function CoursesPage() {
       )}
 
       <p className="muted text-xs mt-6">
-        No yardages, hazards or greens were invented for any course. Ventanas ships with MOCK geometry
-        purely so the engine can be tested; Zibatá and San Miguel are empty until you load them.
+        Nothing here is invented. Ventanas carries the real scorecard off the club&apos;s printed card —
+        par, stroke index and all five tees — but its hazards and green shapes have not been surveyed
+        yet, so the engine plans a neutral corridor rather than guess at trouble. Zibatá and San Miguel
+        are empty until you load them.
       </p>
     </Screen>
   );
