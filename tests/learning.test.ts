@@ -41,7 +41,7 @@ describe("course learning", () => {
       shot({ holeNumber: 2, selectedClub: "Mini Driver", result: "FAIRWAY" }),
     ];
     const r = round([holeRecord({ holeNumber: 2, shots })]);
-    const learned = learnHole([r], "ventanas", 2);
+    const learned = learnHole([r], "mock-course", 2);
     const driver = learned.find((l) => l.clubName === "Driver")!;
     const mini = learned.find((l) => l.clubName === "Mini Driver")!;
     expect(driver.penalties).toBe(1);

@@ -156,6 +156,9 @@ export interface Hole {
   par: number;
   handicapIndex: number;
   whiteTeeYardage: number;
+  /** Yardaje por tee tal como viene en la tarjeta del club. Opcional: hoy el
+   *  motor solo planifica con whiteTeeYardage, pero el dato real no se tira. */
+  yardageByTee?: Record<string, number>;
   /** ancho util del fairway (yardas, total) */
   fairwayWidthYards: number;
   fairwayStart: number;

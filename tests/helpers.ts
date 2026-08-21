@@ -1,8 +1,10 @@
 import type { Course, Hole, HoleRecord, PlayerProfile, Round, ShotRecord } from "@/types/golf";
 import { DEFAULT_PROFILE } from "@/data/player-defaults";
-import ventanas from "@/data/courses/ventanas.json";
+import mockCourse from "./fixtures/mock-course.json";
 
-export const COURSE = ventanas as unknown as Course;
+/** Campo sintetico. Los tests del motor NO deben depender de datos reales:
+ *  corregir un campo de verdad no puede tumbar la suite. */
+export const COURSE = mockCourse as unknown as Course;
 
 export function hole(n: number): Hole {
   const h = COURSE.holes.find((x) => x.holeNumber === n);
@@ -17,7 +19,7 @@ export function profile(): PlayerProfile {
 export function shot(partial: Partial<ShotRecord>): ShotRecord {
   return {
     roundId: "r1",
-    courseId: "ventanas",
+    courseId: "mock-course",
     holeNumber: 1,
     shotNumber: 1,
     club: "7 Iron",
@@ -64,7 +66,7 @@ export function holeRecord(partial: Partial<HoleRecord>): HoleRecord {
 export function round(holes: HoleRecord[]): Round {
   return {
     id: "r1",
-    courseId: "ventanas",
+    courseId: "mock-course",
     courseName: "Ventanas",
     teeId: "white",
     teeName: "White",
