@@ -196,7 +196,8 @@ interface GreenPoint {
   cost: number;
 }
 
-type GreensideMap = Record<GreenSide, { severity: string; penalty: number } | null>;
+/** Se deriva de greensideBySide para no repetir la forma en dos lados. */
+type GreensideMap = ReturnType<typeof greensideBySide>;
 
 /**
  * Clasifica UN punto alrededor del green y le pone precio.
@@ -249,10 +250,23 @@ function classifyGreenPoint(
     const g = side !== "NONE" ? sides[side] : null;
     const excess = Math.max(Math.abs(lateralPos) - halfW, Math.abs(depthPos) - halfD);
     if (g && g.penalty > 0) {
+      // Agua / OB: se dropea. El costo real vive en el penalty, no en el lie.
       penalty = g.penalty;
       lieOut = "LIGHT_ROUGH";
     } else if (g) {
-      lieOut = g.severity === "EXTREME" || g.severity === "HIGH" ? "BUNKER" : "LIGHT_ROUGH";
+      // El TIPO manda sobre la severidad. Antes un bunker "MEDIUM" se modelaba
+      // como light rough, o sea cargar bunkers no cambiaba ni una decision.
+      // Para un H18 la arena de green no es rough: es medio golpe.
+      lieOut =
+        g.type === "BUNKER"
+          ? "BUNKER"
+          : g.type === "TREES"
+            ? "TREES"
+            : g.type === "RECOVERY"
+              ? "RECOVERY"
+              : g.severity === "EXTREME" || g.severity === "HIGH"
+                ? "HEAVY_ROUGH"
+                : "LIGHT_ROUGH";
     } else {
       lieOut = excess <= 8 ? "LIGHT_ROUGH" : "HEAVY_ROUGH";
     }

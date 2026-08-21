@@ -2,6 +2,7 @@ import type {
   FlagPosition,
   GreenSide,
   Hazard,
+  HazardType,
   Hole,
   Lie,
   RiskLevel,
@@ -211,8 +212,10 @@ export function flagGeometry(hole: Hole, flag: FlagPosition): FlagGeometry {
 }
 
 /** Que hazard hay de cada lado del green. */
-export function greensideBySide(hole: Hole): Record<GreenSide, { severity: string; penalty: number } | null> {
-  const out: Record<GreenSide, { severity: string; penalty: number } | null> = {
+export function greensideBySide(
+  hole: Hole,
+): Record<GreenSide, { type: HazardType; severity: string; penalty: number } | null> {
+  const out: Record<GreenSide, { type: HazardType; severity: string; penalty: number } | null> = {
     LEFT: null,
     RIGHT: null,
     SHORT: null,
@@ -221,7 +224,7 @@ export function greensideBySide(hole: Hole): Record<GreenSide, { severity: strin
   for (const g of hole.greensideHazards) {
     const penalty = g.penaltyCost > 0 ? g.penaltyCost : g.type === "OB" ? 2 : g.type === "WATER" ? 1 : 0;
     const cur = out[g.side];
-    if (!cur || penalty > cur.penalty) out[g.side] = { severity: g.severity, penalty };
+    if (!cur || penalty > cur.penalty) out[g.side] = { type: g.type, severity: g.severity, penalty };
   }
   return out;
 }

@@ -48,15 +48,25 @@
       "fairwayEnd": 468,
       "greenWidth": 30,
       "greenDepth": 28,
-      "greenSafeSide": "NONE",
-      "greenBadSide": "NONE",
-      "greensideHazards": [],
+      "greenSafeSide": "LONG",
+      "greenBadSide": "LEFT",
+      "greensideHazards": [
+        {
+          "id": "h1-g-b-left",
+          "type": "BUNKER",
+          "side": "LEFT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lado leido de imagen satelital, revisado por el jugador. NO verificado en campo."
+        }
+      ],
       "hazards": [],
       "forcedCarry": null,
       "layupZones": [],
       "preferredLandingZones": [],
       "elevationChangeYards": 0,
-      "strategicNotes": "Tarjeta oficial: par 5, HCP 11, 523 yd blancas. SIN agua junto al green (confirmado por el jugador). Green defendido por bunkers; falta registrar de que lado para que el motor los use. Geometria de calle PENDIENTE.",
+      "strategicNotes": "Tarjeta oficial: par 5, HCP 11, 523 yd blancas. SIN agua junto al green (confirmado por el jugador). Bunkers de green: left (lectura satelital). Geometria de calle PENDIENTE.",
       "dataQuality": "PARTIAL",
       "teeCoordinates": null,
       "greenCenter": null,
@@ -81,15 +91,25 @@
       "fairwayEnd": 342,
       "greenWidth": 30,
       "greenDepth": 28,
-      "greenSafeSide": "NONE",
-      "greenBadSide": "NONE",
-      "greensideHazards": [],
+      "greenSafeSide": "LONG",
+      "greenBadSide": "LEFT",
+      "greensideHazards": [
+        {
+          "id": "h2-g-b-left",
+          "type": "BUNKER",
+          "side": "LEFT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lado leido de imagen satelital, revisado por el jugador. NO verificado en campo."
+        }
+      ],
       "hazards": [],
       "forcedCarry": null,
       "layupZones": [],
       "preferredLandingZones": [],
       "elevationChangeYards": 0,
-      "strategicNotes": "Tarjeta oficial: par 4, HCP 3, 397 yd blancas. SIN agua junto al green (confirmado por el jugador). Green defendido por bunkers; falta registrar de que lado para que el motor los use. Geometria de calle PENDIENTE.",
+      "strategicNotes": "Tarjeta oficial: par 4, HCP 3, 397 yd blancas. SIN agua junto al green (confirmado por el jugador). Bunkers de green: left (lectura satelital). Geometria de calle PENDIENTE.",
       "dataQuality": "PARTIAL",
       "teeCoordinates": null,
       "greenCenter": null,
@@ -114,15 +134,25 @@
       "fairwayEnd": 146,
       "greenWidth": 30,
       "greenDepth": 28,
-      "greenSafeSide": "NONE",
-      "greenBadSide": "NONE",
-      "greensideHazards": [],
+      "greenSafeSide": "LONG",
+      "greenBadSide": "SHORT",
+      "greensideHazards": [
+        {
+          "id": "h3-g-b-short",
+          "type": "BUNKER",
+          "side": "SHORT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lado leido de imagen satelital, revisado por el jugador. NO verificado en campo."
+        }
+      ],
       "hazards": [],
       "forcedCarry": null,
       "layupZones": [],
       "preferredLandingZones": [],
       "elevationChangeYards": 0,
-      "strategicNotes": "Tarjeta oficial: par 3, HCP 13, 156 yd blancas. Green defendido por bunkers; falta registrar de que lado para que el motor los use. Geometria de calle PENDIENTE.",
+      "strategicNotes": "Tarjeta oficial: par 3, HCP 13, 156 yd blancas. Bunkers de green: short (lectura satelital). Geometria de calle PENDIENTE.",
       "dataQuality": "PARTIAL",
       "teeCoordinates": null,
       "greenCenter": null,
@@ -147,15 +177,25 @@
       "fairwayEnd": 281,
       "greenWidth": 30,
       "greenDepth": 28,
-      "greenSafeSide": "NONE",
-      "greenBadSide": "NONE",
-      "greensideHazards": [],
+      "greenSafeSide": "LONG",
+      "greenBadSide": "LEFT",
+      "greensideHazards": [
+        {
+          "id": "h4-g-b-left",
+          "type": "BUNKER",
+          "side": "LEFT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lado leido de imagen satelital, revisado por el jugador. NO verificado en campo."
+        }
+      ],
       "hazards": [],
       "forcedCarry": null,
       "layupZones": [],
       "preferredLandingZones": [],
       "elevationChangeYards": 0,
-      "strategicNotes": "Tarjeta oficial: par 4, HCP 5, 336 yd blancas. Green defendido por bunkers; falta registrar de que lado para que el motor los use. Geometria de calle PENDIENTE.",
+      "strategicNotes": "Tarjeta oficial: par 4, HCP 5, 336 yd blancas. Bunkers de green: left (lectura satelital). Geometria de calle PENDIENTE.",
       "dataQuality": "PARTIAL",
       "teeCoordinates": null,
       "greenCenter": null,
@@ -180,15 +220,34 @@
       "fairwayEnd": 156,
       "greenWidth": 30,
       "greenDepth": 28,
-      "greenSafeSide": "NONE",
-      "greenBadSide": "NONE",
-      "greensideHazards": [],
+      "greenSafeSide": "LONG",
+      "greenBadSide": "SHORT",
+      "greensideHazards": [
+        {
+          "id": "h5-g-b-short",
+          "type": "BUNKER",
+          "side": "SHORT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lado leido de imagen satelital, revisado por el jugador. NO verificado en campo."
+        },
+        {
+          "id": "h5-g-b-right",
+          "type": "BUNKER",
+          "side": "RIGHT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lado leido de imagen satelital, revisado por el jugador. NO verificado en campo."
+        }
+      ],
       "hazards": [],
       "forcedCarry": null,
       "layupZones": [],
       "preferredLandingZones": [],
       "elevationChangeYards": 0,
-      "strategicNotes": "Tarjeta oficial: par 3, HCP 9, 166 yd blancas. Green defendido por bunkers; falta registrar de que lado para que el motor los use. Geometria de calle PENDIENTE.",
+      "strategicNotes": "Tarjeta oficial: par 3, HCP 9, 166 yd blancas. Bunkers de green: short, right (lectura satelital). Geometria de calle PENDIENTE.",
       "dataQuality": "PARTIAL",
       "teeCoordinates": null,
       "greenCenter": null,
@@ -213,15 +272,34 @@
       "fairwayEnd": 548,
       "greenWidth": 30,
       "greenDepth": 28,
-      "greenSafeSide": "NONE",
-      "greenBadSide": "NONE",
-      "greensideHazards": [],
+      "greenSafeSide": "LONG",
+      "greenBadSide": "LEFT",
+      "greensideHazards": [
+        {
+          "id": "h6-g-b-left",
+          "type": "BUNKER",
+          "side": "LEFT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lado leido de imagen satelital, revisado por el jugador. NO verificado en campo."
+        },
+        {
+          "id": "h6-g-b-right",
+          "type": "BUNKER",
+          "side": "RIGHT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lado leido de imagen satelital, revisado por el jugador. NO verificado en campo."
+        }
+      ],
       "hazards": [],
       "forcedCarry": null,
       "layupZones": [],
       "preferredLandingZones": [],
       "elevationChangeYards": 0,
-      "strategicNotes": "Tarjeta oficial: par 5, HCP 1, 603 yd blancas. Green defendido por bunkers; falta registrar de que lado para que el motor los use. Geometria de calle PENDIENTE.",
+      "strategicNotes": "Tarjeta oficial: par 5, HCP 1, 603 yd blancas. Bunkers de green: left, right (lectura satelital). Geometria de calle PENDIENTE.",
       "dataQuality": "PARTIAL",
       "teeCoordinates": null,
       "greenCenter": null,
@@ -246,9 +324,19 @@
       "fairwayEnd": 356,
       "greenWidth": 30,
       "greenDepth": 28,
-      "greenSafeSide": "NONE",
-      "greenBadSide": "NONE",
-      "greensideHazards": [],
+      "greenSafeSide": "LONG",
+      "greenBadSide": "LEFT",
+      "greensideHazards": [
+        {
+          "id": "h7-g-b-left",
+          "type": "BUNKER",
+          "side": "LEFT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lado leido de imagen satelital, revisado por el jugador. NO verificado en campo."
+        }
+      ],
       "hazards": [],
       "forcedCarry": null,
       "layupZones": [],
@@ -279,15 +367,34 @@
       "fairwayEnd": 285,
       "greenWidth": 30,
       "greenDepth": 28,
-      "greenSafeSide": "NONE",
-      "greenBadSide": "NONE",
-      "greensideHazards": [],
+      "greenSafeSide": "LONG",
+      "greenBadSide": "LEFT",
+      "greensideHazards": [
+        {
+          "id": "h8-g-b-left",
+          "type": "BUNKER",
+          "side": "LEFT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lado leido de imagen satelital, revisado por el jugador. NO verificado en campo."
+        },
+        {
+          "id": "h8-g-b-right",
+          "type": "BUNKER",
+          "side": "RIGHT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lado leido de imagen satelital, revisado por el jugador. NO verificado en campo."
+        }
+      ],
       "hazards": [],
       "forcedCarry": null,
       "layupZones": [],
       "preferredLandingZones": [],
       "elevationChangeYards": 0,
-      "strategicNotes": "Tarjeta oficial: par 4, HCP 7, 340 yd blancas. Green defendido por bunkers; falta registrar de que lado para que el motor los use. Geometria de calle PENDIENTE.",
+      "strategicNotes": "Tarjeta oficial: par 4, HCP 7, 340 yd blancas. Bunkers de green: left, right (lectura satelital). Geometria de calle PENDIENTE.",
       "dataQuality": "PARTIAL",
       "teeCoordinates": null,
       "greenCenter": null,
@@ -312,15 +419,34 @@
       "fairwayEnd": 109,
       "greenWidth": 30,
       "greenDepth": 28,
-      "greenSafeSide": "NONE",
-      "greenBadSide": "NONE",
-      "greensideHazards": [],
+      "greenSafeSide": "LONG",
+      "greenBadSide": "LEFT",
+      "greensideHazards": [
+        {
+          "id": "h9-g-b-left",
+          "type": "BUNKER",
+          "side": "LEFT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lado leido de imagen satelital, revisado por el jugador. NO verificado en campo."
+        },
+        {
+          "id": "h9-g-b-short",
+          "type": "BUNKER",
+          "side": "SHORT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lado leido de imagen satelital, revisado por el jugador. NO verificado en campo."
+        }
+      ],
       "hazards": [],
       "forcedCarry": null,
       "layupZones": [],
       "preferredLandingZones": [],
       "elevationChangeYards": 0,
-      "strategicNotes": "Tarjeta oficial: par 3, HCP 17, 119 yd blancas. Green defendido por bunkers; falta registrar de que lado para que el motor los use. Geometria de calle PENDIENTE.",
+      "strategicNotes": "Tarjeta oficial: par 3, HCP 17, 119 yd blancas. Bunkers de green: left, short (lectura satelital). Geometria de calle PENDIENTE.",
       "dataQuality": "PARTIAL",
       "teeCoordinates": null,
       "greenCenter": null,
@@ -345,7 +471,7 @@
       "fairwayEnd": 264,
       "greenWidth": 30,
       "greenDepth": 28,
-      "greenSafeSide": "LEFT",
+      "greenSafeSide": "LONG",
       "greenBadSide": "RIGHT",
       "greensideHazards": [
         {
@@ -356,6 +482,15 @@
           "penaltyCost": 1,
           "recoveryDifficulty": "NO_RECOVERY",
           "notes": "Confirmado por el jugador sobre imagen satelital."
+        },
+        {
+          "id": "h10-g-b-left",
+          "type": "BUNKER",
+          "side": "LEFT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lado leido de imagen satelital, revisado por el jugador. NO verificado en campo."
         }
       ],
       "hazards": [],
@@ -388,15 +523,34 @@
       "fairwayEnd": 306,
       "greenWidth": 30,
       "greenDepth": 28,
-      "greenSafeSide": "NONE",
-      "greenBadSide": "NONE",
-      "greensideHazards": [],
+      "greenSafeSide": "LONG",
+      "greenBadSide": "LEFT",
+      "greensideHazards": [
+        {
+          "id": "h11-g-b-left",
+          "type": "BUNKER",
+          "side": "LEFT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lado leido de imagen satelital, revisado por el jugador. NO verificado en campo."
+        },
+        {
+          "id": "h11-g-b-right",
+          "type": "BUNKER",
+          "side": "RIGHT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lado leido de imagen satelital, revisado por el jugador. NO verificado en campo."
+        }
+      ],
       "hazards": [],
       "forcedCarry": null,
       "layupZones": [],
       "preferredLandingZones": [],
       "elevationChangeYards": 0,
-      "strategicNotes": "Tarjeta oficial: par 4, HCP 8, 361 yd blancas. SIN agua junto al green (confirmado por el jugador). Green defendido por bunkers; falta registrar de que lado para que el motor los use. Geometria de calle PENDIENTE.",
+      "strategicNotes": "Tarjeta oficial: par 4, HCP 8, 361 yd blancas. SIN agua junto al green (confirmado por el jugador). Bunkers de green: left, right (lectura satelital). Geometria de calle PENDIENTE.",
       "dataQuality": "PARTIAL",
       "teeCoordinates": null,
       "greenCenter": null,
@@ -421,15 +575,43 @@
       "fairwayEnd": 104,
       "greenWidth": 30,
       "greenDepth": 28,
-      "greenSafeSide": "NONE",
-      "greenBadSide": "NONE",
-      "greensideHazards": [],
+      "greenSafeSide": "LONG",
+      "greenBadSide": "LEFT",
+      "greensideHazards": [
+        {
+          "id": "h12-g-b-left",
+          "type": "BUNKER",
+          "side": "LEFT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lado leido de imagen satelital, revisado por el jugador. NO verificado en campo."
+        },
+        {
+          "id": "h12-g-b-short",
+          "type": "BUNKER",
+          "side": "SHORT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lado leido de imagen satelital, revisado por el jugador. NO verificado en campo."
+        },
+        {
+          "id": "h12-g-b-right",
+          "type": "BUNKER",
+          "side": "RIGHT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lado leido de imagen satelital, revisado por el jugador. NO verificado en campo."
+        }
+      ],
       "hazards": [],
       "forcedCarry": null,
       "layupZones": [],
       "preferredLandingZones": [],
       "elevationChangeYards": 0,
-      "strategicNotes": "Tarjeta oficial: par 3, HCP 18, 114 yd blancas. Green defendido por bunkers; falta registrar de que lado para que el motor los use. Geometria de calle PENDIENTE.",
+      "strategicNotes": "Tarjeta oficial: par 3, HCP 18, 114 yd blancas. Bunkers de green: left, short, right (lectura satelital). Geometria de calle PENDIENTE.",
       "dataQuality": "PARTIAL",
       "teeCoordinates": null,
       "greenCenter": null,
@@ -454,15 +636,25 @@
       "fairwayEnd": 337,
       "greenWidth": 30,
       "greenDepth": 28,
-      "greenSafeSide": "NONE",
-      "greenBadSide": "NONE",
-      "greensideHazards": [],
+      "greenSafeSide": "LONG",
+      "greenBadSide": "SHORT",
+      "greensideHazards": [
+        {
+          "id": "h13-g-b-short",
+          "type": "BUNKER",
+          "side": "SHORT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lado leido de imagen satelital, revisado por el jugador. NO verificado en campo."
+        }
+      ],
       "hazards": [],
       "forcedCarry": null,
       "layupZones": [],
       "preferredLandingZones": [],
       "elevationChangeYards": 0,
-      "strategicNotes": "Tarjeta oficial: par 4, HCP 6, 392 yd blancas. SIN agua junto al green (confirmado por el jugador). Green defendido por bunkers; falta registrar de que lado para que el motor los use. Geometria de calle PENDIENTE.",
+      "strategicNotes": "Tarjeta oficial: par 4, HCP 6, 392 yd blancas. SIN agua junto al green (confirmado por el jugador). Bunkers de green: short (lectura satelital). Geometria de calle PENDIENTE.",
       "dataQuality": "PARTIAL",
       "teeCoordinates": null,
       "greenCenter": null,
@@ -487,15 +679,34 @@
       "fairwayEnd": 504,
       "greenWidth": 30,
       "greenDepth": 28,
-      "greenSafeSide": "NONE",
-      "greenBadSide": "NONE",
-      "greensideHazards": [],
+      "greenSafeSide": "LONG",
+      "greenBadSide": "LEFT",
+      "greensideHazards": [
+        {
+          "id": "h14-g-b-left",
+          "type": "BUNKER",
+          "side": "LEFT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lado leido de imagen satelital, revisado por el jugador. NO verificado en campo."
+        },
+        {
+          "id": "h14-g-b-short",
+          "type": "BUNKER",
+          "side": "SHORT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lado leido de imagen satelital, revisado por el jugador. NO verificado en campo."
+        }
+      ],
       "hazards": [],
       "forcedCarry": null,
       "layupZones": [],
       "preferredLandingZones": [],
       "elevationChangeYards": 0,
-      "strategicNotes": "Tarjeta oficial: par 5, HCP 4, 559 yd blancas. Green defendido por bunkers; falta registrar de que lado para que el motor los use. Geometria de calle PENDIENTE.",
+      "strategicNotes": "Tarjeta oficial: par 5, HCP 4, 559 yd blancas. Bunkers de green: left, short (lectura satelital). Geometria de calle PENDIENTE.",
       "dataQuality": "PARTIAL",
       "teeCoordinates": null,
       "greenCenter": null,
@@ -520,15 +731,43 @@
       "fairwayEnd": 235,
       "greenWidth": 30,
       "greenDepth": 28,
-      "greenSafeSide": "NONE",
-      "greenBadSide": "NONE",
-      "greensideHazards": [],
+      "greenSafeSide": "LONG",
+      "greenBadSide": "LEFT",
+      "greensideHazards": [
+        {
+          "id": "h15-g-b-left",
+          "type": "BUNKER",
+          "side": "LEFT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lado leido de imagen satelital, revisado por el jugador. NO verificado en campo."
+        },
+        {
+          "id": "h15-g-b-short",
+          "type": "BUNKER",
+          "side": "SHORT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lado leido de imagen satelital, revisado por el jugador. NO verificado en campo."
+        },
+        {
+          "id": "h15-g-b-right",
+          "type": "BUNKER",
+          "side": "RIGHT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lado leido de imagen satelital, revisado por el jugador. NO verificado en campo."
+        }
+      ],
       "hazards": [],
       "forcedCarry": null,
       "layupZones": [],
       "preferredLandingZones": [],
       "elevationChangeYards": 0,
-      "strategicNotes": "Tarjeta oficial: par 4, HCP 16, 290 yd blancas. Green defendido por bunkers; falta registrar de que lado para que el motor los use. Geometria de calle PENDIENTE.",
+      "strategicNotes": "Tarjeta oficial: par 4, HCP 16, 290 yd blancas. Bunkers de green: left, short, right (lectura satelital). Geometria de calle PENDIENTE.",
       "dataQuality": "PARTIAL",
       "teeCoordinates": null,
       "greenCenter": null,
@@ -553,15 +792,34 @@
       "fairwayEnd": 289,
       "greenWidth": 30,
       "greenDepth": 28,
-      "greenSafeSide": "NONE",
-      "greenBadSide": "NONE",
-      "greensideHazards": [],
+      "greenSafeSide": "LONG",
+      "greenBadSide": "LEFT",
+      "greensideHazards": [
+        {
+          "id": "h16-g-b-left",
+          "type": "BUNKER",
+          "side": "LEFT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lado leido de imagen satelital, revisado por el jugador. NO verificado en campo."
+        },
+        {
+          "id": "h16-g-b-right",
+          "type": "BUNKER",
+          "side": "RIGHT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lado leido de imagen satelital, revisado por el jugador. NO verificado en campo."
+        }
+      ],
       "hazards": [],
       "forcedCarry": null,
       "layupZones": [],
       "preferredLandingZones": [],
       "elevationChangeYards": 0,
-      "strategicNotes": "Tarjeta oficial: par 4, HCP 12, 344 yd blancas. Green defendido por bunkers; falta registrar de que lado para que el motor los use. Geometria de calle PENDIENTE.",
+      "strategicNotes": "Tarjeta oficial: par 4, HCP 12, 344 yd blancas. Bunkers de green: left, right (lectura satelital). Geometria de calle PENDIENTE.",
       "dataQuality": "PARTIAL",
       "teeCoordinates": null,
       "greenCenter": null,
@@ -586,7 +844,7 @@
       "fairwayEnd": 123,
       "greenWidth": 30,
       "greenDepth": 28,
-      "greenSafeSide": "LEFT",
+      "greenSafeSide": "LONG",
       "greenBadSide": "RIGHT",
       "greensideHazards": [
         {
@@ -597,6 +855,15 @@
           "penaltyCost": 1,
           "recoveryDifficulty": "NO_RECOVERY",
           "notes": "Confirmado por el jugador sobre imagen satelital."
+        },
+        {
+          "id": "h17-g-b-left",
+          "type": "BUNKER",
+          "side": "LEFT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lado leido de imagen satelital, revisado por el jugador. NO verificado en campo."
         }
       ],
       "hazards": [],
@@ -626,7 +893,7 @@
       "fairwayEnd": 419,
       "greenWidth": 30,
       "greenDepth": 28,
-      "greenSafeSide": "LEFT",
+      "greenSafeSide": "NONE",
       "greenBadSide": "RIGHT",
       "greensideHazards": [
         {
@@ -646,6 +913,24 @@
           "penaltyCost": 1,
           "recoveryDifficulty": "NO_RECOVERY",
           "notes": "Confirmado por el jugador sobre imagen satelital."
+        },
+        {
+          "id": "h18-g-b-left",
+          "type": "BUNKER",
+          "side": "LEFT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lado leido de imagen satelital, revisado por el jugador. NO verificado en campo."
+        },
+        {
+          "id": "h18-g-b-short",
+          "type": "BUNKER",
+          "side": "SHORT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lado leido de imagen satelital, revisado por el jugador. NO verificado en campo."
         }
       ],
       "hazards": [],
@@ -664,6 +949,6 @@
   ],
   "dataQuality": "PARTIAL",
   "source": "BUNDLED",
-  "notes": "Scorecard REAL, capturado de la tarjeta fisica del club (par, handicap y los 5 tees). Hoyo 7 viene impreso como par 4/5: la tarjeta suma OUT 36 contandolo como 5, el club publicita el campo como par 70 contandolo como 4. Aqui se guarda como 5. Hoyo 18 CONFIRMADO (par 4, HCP 2, 474 blancas) contra la app GPS. Altitud del campo: 1904-1919 m (SRTM). La bola vuela ~12% mas que a nivel del mar. Hoyo 7: 411 blancas, confirmado por el jugador contra la tarjeta. Las apps GPS dicen 431 y estan equivocadas. La GEOMETRIA (ancho de calle, bunkers, agua, greens) NO es real todavia: corredor neutro sin hazards. AGUA junto al green confirmada por el jugador en 10 (derecha), 17 (derecha) y 18 (derecha y fondo). Los demas greens estan defendidos por bunkers, pero falta el lado: un bunker sin lado no le sirve al motor, asi que no se cargo ninguno. OSM no tiene esta agua mapeada; ausencia de dato no es ausencia de hazard.",
-  "updatedAt": "2026-08-21T04:13:12.389Z"
+  "notes": "Scorecard REAL, capturado de la tarjeta fisica del club (par, handicap y los 5 tees). Hoyo 7 viene impreso como par 4/5: la tarjeta suma OUT 36 contandolo como 5, el club publicita el campo como par 70 contandolo como 4. Aqui se guarda como 5. Hoyo 18 CONFIRMADO (par 4, HCP 2, 474 blancas) contra la app GPS. Altitud del campo: 1904-1919 m (SRTM). La bola vuela ~12% mas que a nivel del mar. Hoyo 7: 411 blancas, confirmado por el jugador contra la tarjeta. Las apps GPS dicen 431 y estan equivocadas. La GEOMETRIA (ancho de calle, bunkers, agua, greens) NO es real todavia: corredor neutro sin hazards. AGUA junto al green confirmada por el jugador en 10 (derecha), 17 (derecha) y 18 (derecha y fondo). Bunkers de green cargados en los 18 con el lado leido de imagen satelital y revisado por el jugador; NO verificados en campo, por eso van como MEDIUM sin penalidad. OSM no tiene esta agua mapeada; ausencia de dato no es ausencia de hazard.",
+  "updatedAt": "2026-08-21T04:20:20.091Z"
 }
