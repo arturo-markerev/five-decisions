@@ -17,6 +17,7 @@ import type {
 } from "@/types/golf";
 import { mergeCourses } from "@/lib/courses";
 import { recommendShot } from "@/lib/decision-engine";
+import { buildHolePlan } from "@/lib/hole-plan";
 import { learnHole } from "@/lib/course-learning";
 import { evaluateHole, emptyTally, tigerFivePrompt } from "@/lib/tiger-five-engine";
 import { puttPlan } from "@/lib/putting-engine";
@@ -37,6 +38,7 @@ import {
 } from "@/lib/storage";
 import HoleHeader from "@/components/HoleHeader";
 import HoleMap from "@/components/HoleMap";
+import HolePlan from "@/components/HolePlan";
 import FlagSelector, { flagLabel } from "@/components/FlagSelector";
 import LaserInput from "@/components/LaserInput";
 import ClubRecommendation from "@/components/ClubRecommendation";
@@ -47,6 +49,7 @@ import TigerFiveWidget from "@/components/TigerFiveWidget";
 
 type Phase =
   | "FLAG"
+  | "HOLE_PLAN"
   | "PLAN"
   | "CLUB_OVERRIDE"
   | "LASER"
@@ -140,6 +143,16 @@ export default function RoundPage() {
       holeHistory,
     });
   }, [profile, hole, holeRecord, shotNumber, lie, laser, distance, holeHistory]);
+
+  const holePlan = useMemo(() => {
+    if (!profile || !hole || !holeRecord) return null;
+    return buildHolePlan({
+      profile,
+      hole,
+      flagPosition: holeRecord.flagPosition,
+      holeHistory,
+    });
+  }, [profile, hole, holeRecord, holeHistory]);
 
   const tally: TigerFiveTally = useMemo(() => {
     const t = emptyTally();
@@ -308,8 +321,22 @@ export default function RoundPage() {
             onChange={(f: FlagPosition) => updateHoleRecord({ flagPosition: f })}
           />
           <div className="sticky-actions">
+            <button className="btn btn-primary" onClick={() => setPhase("HOLE_PLAN")}>
+              SEE THE PLAN
+            </button>
+          </div>
+        </>
+      ) : null}
+
+      {phase === "HOLE_PLAN" && holePlan ? (
+        <>
+          <HolePlan plan={holePlan} />
+          <div className="sticky-actions">
             <button className="btn btn-primary" onClick={() => setPhase("PLAN")}>
-              CONTINUE
+              PLAY THE HOLE
+            </button>
+            <button className="btn btn-ghost mt-2" onClick={() => setPhase("FLAG")}>
+              Change the flag
             </button>
           </div>
         </>
@@ -339,6 +366,11 @@ export default function RoundPage() {
               <button className="badge" onClick={() => setPhase("LIE")}>
                 Lie
               </button>
+              {shotNumber === 1 ? (
+                <button className="badge" onClick={() => setPhase("HOLE_PLAN")}>
+                  Plan
+                </button>
+              ) : null}
             </div>
           </div>
 
