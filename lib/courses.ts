@@ -2,6 +2,7 @@ import type { Course, Hole } from "@/types/golf";
 import ventanasJson from "@/data/courses/ventanas.json";
 import zibataJson from "@/data/courses/zibata.json";
 import sanMiguelJson from "@/data/courses/san-miguel.json";
+import campanarioJson from "@/data/courses/campanario.json";
 
 /**
  * Los campos bundled viven en JSON independientes por campo.
@@ -13,6 +14,7 @@ export const BUNDLED_COURSES: Course[] = [
   ventanasJson as unknown as Course,
   zibataJson as unknown as Course,
   sanMiguelJson as unknown as Course,
+  campanarioJson as unknown as Course,
 ];
 
 export function mergeCourses(userCourses: Course[]): Course[] {
