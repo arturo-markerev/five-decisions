@@ -805,12 +805,27 @@
           "notes": "Lectura satelital de la captura GPS del jugador. PENDIENTE de revision."
         }
       ],
-      "hazards": [],
+      "hazards": [
+        {
+          "id": "h16-w-left",
+          "type": "WATER",
+          "side": "LEFT",
+          "startDistanceFromTee": 172,
+          "endDistanceFromTee": 347,
+          "lateralStart": 15,
+          "lateralEnd": 90,
+          "carryRequired": null,
+          "severity": "EXTREME",
+          "penaltyCost": 1,
+          "recoveryDifficulty": "NO_RECOVERY",
+          "notes": "Distancia derivada de la marca del jugador en su app GPS (yardaje del hoyo menos la burbuja retículo-green). Lado LEFT leido de satelite. Distancia lateral al centro estimada, no medida."
+        }
+      ],
       "forcedCarry": null,
       "layupZones": [],
       "preferredLandingZones": [],
       "elevationChangeYards": 0,
-      "strategicNotes": "App GPS del jugador: par 5, HCP 4, 484 yd blancas. Hazards de green: lectura satelital PENDIENTE de revision. Geometria de calle (agua y bunkers de pegada) PENDIENTE.",
+      "strategicNotes": "App GPS del jugador: par 5, HCP 4, 484 yd blancas. AGUA CARGADA: El agua corre por la izquierda entre las 172 y las 347 yd. Marcadas ambas puntas por el jugador. Hazards de green: lectura satelital PENDIENTE de revision.",
       "dataQuality": "PARTIAL",
       "teeCoordinates": null,
       "greenCenter": null,
@@ -844,12 +859,27 @@
           "notes": "Lectura satelital de la captura GPS del jugador. PENDIENTE de revision."
         }
       ],
-      "hazards": [],
+      "hazards": [
+        {
+          "id": "h17-w-both",
+          "type": "WATER",
+          "side": "BOTH",
+          "startDistanceFromTee": 195,
+          "endDistanceFromTee": 373,
+          "lateralStart": 20,
+          "lateralEnd": 90,
+          "carryRequired": null,
+          "severity": "EXTREME",
+          "penaltyCost": 1,
+          "recoveryDifficulty": "NO_RECOVERY",
+          "notes": "Distancia derivada de la marca del jugador en su app GPS. El jugador confirma que es AGUA, pero el satelite en este punto se lee como arena/desierto y NO se pudo determinar el lado. Se carga en AMBOS flancos a proposito: el motor nunca apunta hacia el agua, a lo sumo es mas conservador de la cuenta. PENDIENTE: confirmar el lado."
+        }
+      ],
       "forcedCarry": null,
       "layupZones": [],
       "preferredLandingZones": [],
       "elevationChangeYards": 0,
-      "strategicNotes": "App GPS del jugador: par 4, HCP 12, 373 yd blancas. Hazards de green: lectura satelital PENDIENTE de revision. Geometria de calle (agua y bunkers de pegada) PENDIENTE.",
+      "strategicNotes": "App GPS del jugador: par 4, HCP 12, 373 yd blancas. AGUA CARGADA: Agua desde 195 yd hasta el green segun el jugador. LADO SIN CONFIRMAR: cargada en ambos flancos. Hazards de green: lectura satelital PENDIENTE de revision.",
       "dataQuality": "PARTIAL",
       "teeCoordinates": null,
       "greenCenter": null,
@@ -883,12 +913,27 @@
           "notes": "Lectura satelital de la captura GPS del jugador. PENDIENTE de revision."
         }
       ],
-      "hazards": [],
+      "hazards": [
+        {
+          "id": "h18-w-both",
+          "type": "WATER",
+          "side": "BOTH",
+          "startDistanceFromTee": 227,
+          "endDistanceFromTee": 402,
+          "lateralStart": 20,
+          "lateralEnd": 90,
+          "carryRequired": null,
+          "severity": "EXTREME",
+          "penaltyCost": 1,
+          "recoveryDifficulty": "NO_RECOVERY",
+          "notes": "Distancia derivada de la marca del jugador en su app GPS. El jugador confirma que es AGUA, pero el satelite en este punto se lee como arena/desierto y NO se pudo determinar el lado. Se carga en AMBOS flancos a proposito: el motor nunca apunta hacia el agua, a lo sumo es mas conservador de la cuenta. PENDIENTE: confirmar el lado."
+        }
+      ],
       "forcedCarry": null,
       "layupZones": [],
       "preferredLandingZones": [],
       "elevationChangeYards": 0,
-      "strategicNotes": "App GPS del jugador: par 5, HCP 14, 485 yd blancas. Hazards de green: lectura satelital PENDIENTE de revision. Geometria de calle (agua y bunkers de pegada) PENDIENTE.",
+      "strategicNotes": "App GPS del jugador: par 5, HCP 14, 485 yd blancas. AGUA CARGADA: Agua entre las 227 y las 402 yd segun el jugador. LADO SIN CONFIRMAR: cargada en ambos flancos. Hazards de green: lectura satelital PENDIENTE de revision.",
       "dataQuality": "PARTIAL",
       "teeCoordinates": null,
       "greenCenter": null,
@@ -899,6 +944,6 @@
   ],
   "dataQuality": "PARTIAL",
   "source": "BUNDLED",
-  "notes": "Par, handicap y yardaje de blancas de los 18 hoyos, leidos de las capturas de la app GPS del jugador. Par 72, 6594 yd. AGUA CARGADA en los hoyos 5, 10, 11, 13 y 15, con las distancias que el jugador marco en su app; el lado sale de satelite y la distancia lateral al centro es una estimacion conservadora sin medir. Hoyos 16, 17 y 18: el jugador marco puntos pero falta confirmar que son. El resto de los hoyos no tiene geometria de calle: ahi el motor recomienda approach pero no opina del tee.",
+  "notes": "Par, handicap y yardaje de blancas de los 18 hoyos, leidos de las capturas de la app GPS del jugador. Par 72, 6594 yd. AGUA CARGADA en 5, 10, 11, 13, 15, 16, 17 y 18 con las distancias que el jugador marco en su app. En 17 y 18 el jugador confirma agua pero el satelite se lee como arena: van con side BOTH hasta que confirme el lado, para no apuntar nunca hacia el agua. El resto de los hoyos todavia no tiene geometria de calle.",
   "updatedAt": "2026-08-27T00:00:00.000Z"
 }
