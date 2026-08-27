@@ -1,0 +1,904 @@
+{
+  "id": "campanario",
+  "name": "Club de Golf El Campanario",
+  "nameConfirmed": false,
+  "location": "Queretaro, QRO",
+  "tees": [
+    {
+      "id": "blancas",
+      "name": "Blancas",
+      "color": "#F5F3EE"
+    }
+  ],
+  "holes": [
+    {
+      "holeNumber": 1,
+      "par": 5,
+      "handicapIndex": 5,
+      "whiteTeeYardage": 540,
+      "yardageByTee": {
+        "blancas": 540
+      },
+      "fairwayWidthYards": 32,
+      "fairwayStart": 160,
+      "fairwayEnd": 485,
+      "greenWidth": 30,
+      "greenDepth": 28,
+      "greenSafeSide": "LONG",
+      "greenBadSide": "LEFT",
+      "greensideHazards": [
+        {
+          "id": "h1-g-b-left",
+          "type": "BUNKER",
+          "side": "LEFT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lectura satelital de la captura GPS del jugador. PENDIENTE de revision."
+        }
+      ],
+      "hazards": [],
+      "forcedCarry": null,
+      "layupZones": [],
+      "preferredLandingZones": [],
+      "elevationChangeYards": 0,
+      "strategicNotes": "App GPS del jugador: par 5, HCP 5, 540 yd blancas. Hazards de green: lectura satelital PENDIENTE de revision. Geometria de calle (agua y bunkers de pegada) PENDIENTE.",
+      "dataQuality": "PARTIAL",
+      "teeCoordinates": null,
+      "greenCenter": null,
+      "greenPolygon": [],
+      "fairwayPolygon": [],
+      "referenceImage": null
+    },
+    {
+      "holeNumber": 2,
+      "par": 4,
+      "handicapIndex": 3,
+      "whiteTeeYardage": 395,
+      "yardageByTee": {
+        "blancas": 395
+      },
+      "fairwayWidthYards": 32,
+      "fairwayStart": 158,
+      "fairwayEnd": 340,
+      "greenWidth": 30,
+      "greenDepth": 28,
+      "greenSafeSide": "LONG",
+      "greenBadSide": "RIGHT",
+      "greensideHazards": [
+        {
+          "id": "h2-g-b-right",
+          "type": "BUNKER",
+          "side": "RIGHT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lectura satelital de la captura GPS del jugador. PENDIENTE de revision."
+        }
+      ],
+      "hazards": [],
+      "forcedCarry": null,
+      "layupZones": [],
+      "preferredLandingZones": [],
+      "elevationChangeYards": 0,
+      "strategicNotes": "App GPS del jugador: par 4, HCP 3, 395 yd blancas. Hazards de green: lectura satelital PENDIENTE de revision. Geometria de calle (agua y bunkers de pegada) PENDIENTE.",
+      "dataQuality": "PARTIAL",
+      "teeCoordinates": null,
+      "greenCenter": null,
+      "greenPolygon": [],
+      "fairwayPolygon": [],
+      "referenceImage": null
+    },
+    {
+      "holeNumber": 3,
+      "par": 3,
+      "handicapIndex": 9,
+      "whiteTeeYardage": 178,
+      "yardageByTee": {
+        "blancas": 178
+      },
+      "fairwayWidthYards": 40,
+      "fairwayStart": 0,
+      "fairwayEnd": 168,
+      "greenWidth": 30,
+      "greenDepth": 33,
+      "greenSafeSide": "LONG",
+      "greenBadSide": "RIGHT",
+      "greensideHazards": [
+        {
+          "id": "h3-g-b-right",
+          "type": "BUNKER",
+          "side": "RIGHT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lectura satelital de la captura GPS del jugador. PENDIENTE de revision."
+        },
+        {
+          "id": "h3-g-b-short",
+          "type": "BUNKER",
+          "side": "SHORT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lectura satelital de la captura GPS del jugador. PENDIENTE de revision."
+        }
+      ],
+      "hazards": [],
+      "forcedCarry": null,
+      "layupZones": [],
+      "preferredLandingZones": [],
+      "elevationChangeYards": 0,
+      "strategicNotes": "App GPS del jugador: par 3, HCP 9, 178 yd blancas. Hazards de green: lectura satelital PENDIENTE de revision. Geometria de calle PENDIENTE. Profundidad de green 33 yd derivada de las burbujas Front 161 / Back 194 de la app (no medida en campo).",
+      "dataQuality": "PARTIAL",
+      "teeCoordinates": null,
+      "greenCenter": null,
+      "greenPolygon": [],
+      "fairwayPolygon": [],
+      "referenceImage": null
+    },
+    {
+      "holeNumber": 4,
+      "par": 4,
+      "handicapIndex": 11,
+      "whiteTeeYardage": 372,
+      "yardageByTee": {
+        "blancas": 372
+      },
+      "fairwayWidthYards": 32,
+      "fairwayStart": 149,
+      "fairwayEnd": 317,
+      "greenWidth": 30,
+      "greenDepth": 28,
+      "greenSafeSide": "LONG",
+      "greenBadSide": "LEFT",
+      "greensideHazards": [
+        {
+          "id": "h4-g-b-left",
+          "type": "BUNKER",
+          "side": "LEFT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lectura satelital de la captura GPS del jugador. PENDIENTE de revision."
+        },
+        {
+          "id": "h4-g-b-short",
+          "type": "BUNKER",
+          "side": "SHORT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lectura satelital de la captura GPS del jugador. PENDIENTE de revision."
+        }
+      ],
+      "hazards": [],
+      "forcedCarry": null,
+      "layupZones": [],
+      "preferredLandingZones": [],
+      "elevationChangeYards": 0,
+      "strategicNotes": "App GPS del jugador: par 4, HCP 11, 372 yd blancas. Hazards de green: lectura satelital PENDIENTE de revision. Geometria de calle (agua y bunkers de pegada) PENDIENTE.",
+      "dataQuality": "PARTIAL",
+      "teeCoordinates": null,
+      "greenCenter": null,
+      "greenPolygon": [],
+      "fairwayPolygon": [],
+      "referenceImage": null
+    },
+    {
+      "holeNumber": 5,
+      "par": 3,
+      "handicapIndex": 13,
+      "whiteTeeYardage": 159,
+      "yardageByTee": {
+        "blancas": 159
+      },
+      "fairwayWidthYards": 40,
+      "fairwayStart": 0,
+      "fairwayEnd": 149,
+      "greenWidth": 30,
+      "greenDepth": 24,
+      "greenSafeSide": "LONG",
+      "greenBadSide": "LEFT",
+      "greensideHazards": [
+        {
+          "id": "h5-g-w-left",
+          "type": "WATER",
+          "side": "LEFT",
+          "severity": "EXTREME",
+          "penaltyCost": 1,
+          "recoveryDifficulty": "NO_RECOVERY",
+          "notes": "Lectura satelital de la captura GPS del jugador. PENDIENTE de revision."
+        },
+        {
+          "id": "h5-g-b-short",
+          "type": "BUNKER",
+          "side": "SHORT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lectura satelital de la captura GPS del jugador. PENDIENTE de revision."
+        }
+      ],
+      "hazards": [
+        {
+          "id": "h5-w-left",
+          "type": "WATER",
+          "side": "LEFT",
+          "startDistanceFromTee": 33,
+          "endDistanceFromTee": 137,
+          "lateralStart": 10,
+          "lateralEnd": 90,
+          "carryRequired": null,
+          "severity": "EXTREME",
+          "penaltyCost": 1,
+          "recoveryDifficulty": "NO_RECOVERY",
+          "notes": "Distancia derivada de la marca que el jugador puso en su app GPS: yardaje del hoyo menos la burbuja retículo-green. El LADO viene de la imagen satelital. La distancia LATERAL desde el centro es una estimacion conservadora, NO medida."
+        }
+      ],
+      "forcedCarry": null,
+      "layupZones": [],
+      "preferredLandingZones": [],
+      "elevationChangeYards": 0,
+      "strategicNotes": "App GPS del jugador: par 3, HCP 13, 159 yd blancas. AGUA CARGADA: El lago corre por toda la izquierda entre las 33 y las 137 yd. Marcadas ambas puntas por el jugador. Hazards de green: lectura satelital PENDIENTE de revision.",
+      "dataQuality": "PARTIAL",
+      "teeCoordinates": null,
+      "greenCenter": null,
+      "greenPolygon": [],
+      "fairwayPolygon": [],
+      "referenceImage": null
+    },
+    {
+      "holeNumber": 6,
+      "par": 4,
+      "handicapIndex": 15,
+      "whiteTeeYardage": 385,
+      "yardageByTee": {
+        "blancas": 385
+      },
+      "fairwayWidthYards": 32,
+      "fairwayStart": 154,
+      "fairwayEnd": 330,
+      "greenWidth": 30,
+      "greenDepth": 28,
+      "greenSafeSide": "LONG",
+      "greenBadSide": "LEFT",
+      "greensideHazards": [
+        {
+          "id": "h6-g-b-left",
+          "type": "BUNKER",
+          "side": "LEFT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lectura satelital de la captura GPS del jugador. PENDIENTE de revision."
+        },
+        {
+          "id": "h6-g-b-short",
+          "type": "BUNKER",
+          "side": "SHORT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lectura satelital de la captura GPS del jugador. PENDIENTE de revision."
+        }
+      ],
+      "hazards": [],
+      "forcedCarry": null,
+      "layupZones": [],
+      "preferredLandingZones": [],
+      "elevationChangeYards": 0,
+      "strategicNotes": "App GPS del jugador: par 4, HCP 15, 385 yd blancas. Hazards de green: lectura satelital PENDIENTE de revision. Geometria de calle (agua y bunkers de pegada) PENDIENTE.",
+      "dataQuality": "PARTIAL",
+      "teeCoordinates": null,
+      "greenCenter": null,
+      "greenPolygon": [],
+      "fairwayPolygon": [],
+      "referenceImage": null
+    },
+    {
+      "holeNumber": 7,
+      "par": 5,
+      "handicapIndex": 7,
+      "whiteTeeYardage": 530,
+      "yardageByTee": {
+        "blancas": 530
+      },
+      "fairwayWidthYards": 32,
+      "fairwayStart": 160,
+      "fairwayEnd": 475,
+      "greenWidth": 30,
+      "greenDepth": 28,
+      "greenSafeSide": "LONG",
+      "greenBadSide": "SHORT",
+      "greensideHazards": [
+        {
+          "id": "h7-g-b-short",
+          "type": "BUNKER",
+          "side": "SHORT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lectura satelital de la captura GPS del jugador. PENDIENTE de revision."
+        },
+        {
+          "id": "h7-g-b-right",
+          "type": "BUNKER",
+          "side": "RIGHT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lectura satelital de la captura GPS del jugador. PENDIENTE de revision."
+        }
+      ],
+      "hazards": [],
+      "forcedCarry": null,
+      "layupZones": [],
+      "preferredLandingZones": [],
+      "elevationChangeYards": 0,
+      "strategicNotes": "App GPS del jugador: par 5, HCP 7, 530 yd blancas. Hazards de green: lectura satelital PENDIENTE de revision. Geometria de calle (agua y bunkers de pegada) PENDIENTE.",
+      "dataQuality": "PARTIAL",
+      "teeCoordinates": null,
+      "greenCenter": null,
+      "greenPolygon": [],
+      "fairwayPolygon": [],
+      "referenceImage": null
+    },
+    {
+      "holeNumber": 8,
+      "par": 4,
+      "handicapIndex": 17,
+      "whiteTeeYardage": 385,
+      "yardageByTee": {
+        "blancas": 385
+      },
+      "fairwayWidthYards": 32,
+      "fairwayStart": 154,
+      "fairwayEnd": 330,
+      "greenWidth": 30,
+      "greenDepth": 28,
+      "greenSafeSide": "LONG",
+      "greenBadSide": "LEFT",
+      "greensideHazards": [
+        {
+          "id": "h8-g-b-left",
+          "type": "BUNKER",
+          "side": "LEFT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lectura satelital de la captura GPS del jugador. PENDIENTE de revision."
+        },
+        {
+          "id": "h8-g-b-right",
+          "type": "BUNKER",
+          "side": "RIGHT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lectura satelital de la captura GPS del jugador. PENDIENTE de revision."
+        }
+      ],
+      "hazards": [],
+      "forcedCarry": null,
+      "layupZones": [],
+      "preferredLandingZones": [],
+      "elevationChangeYards": 0,
+      "strategicNotes": "App GPS del jugador: par 4, HCP 17, 385 yd blancas. Hazards de green: lectura satelital PENDIENTE de revision. Geometria de calle (agua y bunkers de pegada) PENDIENTE.",
+      "dataQuality": "PARTIAL",
+      "teeCoordinates": null,
+      "greenCenter": null,
+      "greenPolygon": [],
+      "fairwayPolygon": [],
+      "referenceImage": null
+    },
+    {
+      "holeNumber": 9,
+      "par": 4,
+      "handicapIndex": 1,
+      "whiteTeeYardage": 454,
+      "yardageByTee": {
+        "blancas": 454
+      },
+      "fairwayWidthYards": 32,
+      "fairwayStart": 160,
+      "fairwayEnd": 399,
+      "greenWidth": 30,
+      "greenDepth": 28,
+      "greenSafeSide": "LONG",
+      "greenBadSide": "LEFT",
+      "greensideHazards": [
+        {
+          "id": "h9-g-b-left",
+          "type": "BUNKER",
+          "side": "LEFT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lectura satelital de la captura GPS del jugador. PENDIENTE de revision."
+        }
+      ],
+      "hazards": [],
+      "forcedCarry": null,
+      "layupZones": [],
+      "preferredLandingZones": [],
+      "elevationChangeYards": 0,
+      "strategicNotes": "App GPS del jugador: par 4, HCP 1, 454 yd blancas. Hazards de green: lectura satelital PENDIENTE de revision. Geometria de calle (agua y bunkers de pegada) PENDIENTE.",
+      "dataQuality": "PARTIAL",
+      "teeCoordinates": null,
+      "greenCenter": null,
+      "greenPolygon": [],
+      "fairwayPolygon": [],
+      "referenceImage": null
+    },
+    {
+      "holeNumber": 10,
+      "par": 4,
+      "handicapIndex": 2,
+      "whiteTeeYardage": 425,
+      "yardageByTee": {
+        "blancas": 425
+      },
+      "fairwayWidthYards": 32,
+      "fairwayStart": 160,
+      "fairwayEnd": 370,
+      "greenWidth": 30,
+      "greenDepth": 28,
+      "greenSafeSide": "LONG",
+      "greenBadSide": "RIGHT",
+      "greensideHazards": [
+        {
+          "id": "h10-g-w-right",
+          "type": "WATER",
+          "side": "RIGHT",
+          "severity": "EXTREME",
+          "penaltyCost": 1,
+          "recoveryDifficulty": "NO_RECOVERY",
+          "notes": "Lectura satelital de la captura GPS del jugador. PENDIENTE de revision."
+        },
+        {
+          "id": "h10-g-b-left",
+          "type": "BUNKER",
+          "side": "LEFT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lectura satelital de la captura GPS del jugador. PENDIENTE de revision."
+        }
+      ],
+      "hazards": [
+        {
+          "id": "h10-w-right",
+          "type": "WATER",
+          "side": "RIGHT",
+          "startDistanceFromTee": 211,
+          "endDistanceFromTee": 425,
+          "lateralStart": 16,
+          "lateralEnd": 90,
+          "carryRequired": null,
+          "severity": "EXTREME",
+          "penaltyCost": 1,
+          "recoveryDifficulty": "NO_RECOVERY",
+          "notes": "Distancia derivada de la marca que el jugador puso en su app GPS: yardaje del hoyo menos la burbuja retículo-green. El LADO viene de la imagen satelital. La distancia LATERAL desde el centro es una estimacion conservadora, NO medida."
+        }
+      ],
+      "forcedCarry": null,
+      "layupZones": [],
+      "preferredLandingZones": [],
+      "elevationChangeYards": 0,
+      "strategicNotes": "App GPS del jugador: par 4, HCP 2, 425 yd blancas. AGUA CARGADA: El agua empieza a 211 yd por la derecha y acompana hasta el green. Hazards de green: lectura satelital PENDIENTE de revision.",
+      "dataQuality": "PARTIAL",
+      "teeCoordinates": null,
+      "greenCenter": null,
+      "greenPolygon": [],
+      "fairwayPolygon": [],
+      "referenceImage": null
+    },
+    {
+      "holeNumber": 11,
+      "par": 4,
+      "handicapIndex": 8,
+      "whiteTeeYardage": 350,
+      "yardageByTee": {
+        "blancas": 350
+      },
+      "fairwayWidthYards": 32,
+      "fairwayStart": 140,
+      "fairwayEnd": 295,
+      "greenWidth": 30,
+      "greenDepth": 28,
+      "greenSafeSide": "LONG",
+      "greenBadSide": "LEFT",
+      "greensideHazards": [
+        {
+          "id": "h11-g-w-left",
+          "type": "WATER",
+          "side": "LEFT",
+          "severity": "EXTREME",
+          "penaltyCost": 1,
+          "recoveryDifficulty": "NO_RECOVERY",
+          "notes": "Lectura satelital de la captura GPS del jugador. PENDIENTE de revision."
+        },
+        {
+          "id": "h11-g-w-short",
+          "type": "WATER",
+          "side": "SHORT",
+          "severity": "EXTREME",
+          "penaltyCost": 1,
+          "recoveryDifficulty": "NO_RECOVERY",
+          "notes": "Lectura satelital de la captura GPS del jugador. PENDIENTE de revision."
+        }
+      ],
+      "hazards": [
+        {
+          "id": "h11-w-left",
+          "type": "WATER",
+          "side": "LEFT",
+          "startDistanceFromTee": 233,
+          "endDistanceFromTee": 350,
+          "lateralStart": 14,
+          "lateralEnd": 90,
+          "carryRequired": null,
+          "severity": "EXTREME",
+          "penaltyCost": 1,
+          "recoveryDifficulty": "NO_RECOVERY",
+          "notes": "Distancia derivada de la marca que el jugador puso en su app GPS: yardaje del hoyo menos la burbuja retículo-green. El LADO viene de la imagen satelital. La distancia LATERAL desde el centro es una estimacion conservadora, NO medida."
+        }
+      ],
+      "forcedCarry": null,
+      "layupZones": [],
+      "preferredLandingZones": [],
+      "elevationChangeYards": 0,
+      "strategicNotes": "App GPS del jugador: par 4, HCP 8, 350 yd blancas. AGUA CARGADA: El agua empieza a 233 yd por la izquierda y llega al green. Hazards de green: lectura satelital PENDIENTE de revision.",
+      "dataQuality": "PARTIAL",
+      "teeCoordinates": null,
+      "greenCenter": null,
+      "greenPolygon": [],
+      "fairwayPolygon": [],
+      "referenceImage": null
+    },
+    {
+      "holeNumber": 12,
+      "par": 3,
+      "handicapIndex": 18,
+      "whiteTeeYardage": 150,
+      "yardageByTee": {
+        "blancas": 150
+      },
+      "fairwayWidthYards": 40,
+      "fairwayStart": 0,
+      "fairwayEnd": 140,
+      "greenWidth": 30,
+      "greenDepth": 28,
+      "greenSafeSide": "LONG",
+      "greenBadSide": "RIGHT",
+      "greensideHazards": [
+        {
+          "id": "h12-g-b-right",
+          "type": "BUNKER",
+          "side": "RIGHT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lectura satelital de la captura GPS del jugador. PENDIENTE de revision."
+        },
+        {
+          "id": "h12-g-b-left",
+          "type": "BUNKER",
+          "side": "LEFT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lectura satelital de la captura GPS del jugador. PENDIENTE de revision."
+        }
+      ],
+      "hazards": [],
+      "forcedCarry": null,
+      "layupZones": [],
+      "preferredLandingZones": [],
+      "elevationChangeYards": 0,
+      "strategicNotes": "App GPS del jugador: par 3, HCP 18, 150 yd blancas. Hazards de green: lectura satelital PENDIENTE de revision. Geometria de calle (agua y bunkers de pegada) PENDIENTE. Profundidad de green 28 yd derivada de las burbujas Front/Back de la app (no medida en campo).",
+      "dataQuality": "PARTIAL",
+      "teeCoordinates": null,
+      "greenCenter": null,
+      "greenPolygon": [],
+      "fairwayPolygon": [],
+      "referenceImage": null
+    },
+    {
+      "holeNumber": 13,
+      "par": 4,
+      "handicapIndex": 16,
+      "whiteTeeYardage": 381,
+      "yardageByTee": {
+        "blancas": 381
+      },
+      "fairwayWidthYards": 32,
+      "fairwayStart": 152,
+      "fairwayEnd": 326,
+      "greenWidth": 30,
+      "greenDepth": 28,
+      "greenSafeSide": "LONG",
+      "greenBadSide": "RIGHT",
+      "greensideHazards": [
+        {
+          "id": "h13-g-w-right",
+          "type": "WATER",
+          "side": "RIGHT",
+          "severity": "EXTREME",
+          "penaltyCost": 1,
+          "recoveryDifficulty": "NO_RECOVERY",
+          "notes": "Lectura satelital de la captura GPS del jugador. PENDIENTE de revision."
+        },
+        {
+          "id": "h13-g-b-left",
+          "type": "BUNKER",
+          "side": "LEFT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lectura satelital de la captura GPS del jugador. PENDIENTE de revision."
+        }
+      ],
+      "hazards": [
+        {
+          "id": "h13-w-right",
+          "type": "WATER",
+          "side": "RIGHT",
+          "startDistanceFromTee": 266,
+          "endDistanceFromTee": 381,
+          "lateralStart": 16,
+          "lateralEnd": 90,
+          "carryRequired": null,
+          "severity": "EXTREME",
+          "penaltyCost": 1,
+          "recoveryDifficulty": "NO_RECOVERY",
+          "notes": "Distancia derivada de la marca que el jugador puso en su app GPS: yardaje del hoyo menos la burbuja retículo-green. El LADO viene de la imagen satelital. La distancia LATERAL desde el centro es una estimacion conservadora, NO medida."
+        }
+      ],
+      "forcedCarry": null,
+      "layupZones": [],
+      "preferredLandingZones": [],
+      "elevationChangeYards": 0,
+      "strategicNotes": "App GPS del jugador: par 4, HCP 16, 381 yd blancas. AGUA CARGADA: El agua empieza a 266 yd por la derecha y llega al green. Hazards de green: lectura satelital PENDIENTE de revision.",
+      "dataQuality": "PARTIAL",
+      "teeCoordinates": null,
+      "greenCenter": null,
+      "greenPolygon": [],
+      "fairwayPolygon": [],
+      "referenceImage": null
+    },
+    {
+      "holeNumber": 14,
+      "par": 4,
+      "handicapIndex": 6,
+      "whiteTeeYardage": 399,
+      "yardageByTee": {
+        "blancas": 399
+      },
+      "fairwayWidthYards": 32,
+      "fairwayStart": 160,
+      "fairwayEnd": 344,
+      "greenWidth": 30,
+      "greenDepth": 28,
+      "greenSafeSide": "LONG",
+      "greenBadSide": "LEFT",
+      "greensideHazards": [
+        {
+          "id": "h14-g-b-left",
+          "type": "BUNKER",
+          "side": "LEFT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lectura satelital de la captura GPS del jugador. PENDIENTE de revision."
+        }
+      ],
+      "hazards": [],
+      "forcedCarry": null,
+      "layupZones": [],
+      "preferredLandingZones": [],
+      "elevationChangeYards": 0,
+      "strategicNotes": "App GPS del jugador: par 4, HCP 6, 399 yd blancas. Hazards de green: lectura satelital PENDIENTE de revision. Geometria de calle (agua y bunkers de pegada) PENDIENTE.",
+      "dataQuality": "PARTIAL",
+      "teeCoordinates": null,
+      "greenCenter": null,
+      "greenPolygon": [],
+      "fairwayPolygon": [],
+      "referenceImage": null
+    },
+    {
+      "holeNumber": 15,
+      "par": 3,
+      "handicapIndex": 10,
+      "whiteTeeYardage": 149,
+      "yardageByTee": {
+        "blancas": 149
+      },
+      "fairwayWidthYards": 40,
+      "fairwayStart": 0,
+      "fairwayEnd": 139,
+      "greenWidth": 30,
+      "greenDepth": 36,
+      "greenSafeSide": "LONG",
+      "greenBadSide": "LEFT",
+      "greensideHazards": [
+        {
+          "id": "h15-g-w-left",
+          "type": "WATER",
+          "side": "LEFT",
+          "severity": "EXTREME",
+          "penaltyCost": 1,
+          "recoveryDifficulty": "NO_RECOVERY",
+          "notes": "Lectura satelital de la captura GPS del jugador. PENDIENTE de revision."
+        },
+        {
+          "id": "h15-g-b-right",
+          "type": "BUNKER",
+          "side": "RIGHT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lectura satelital de la captura GPS del jugador. PENDIENTE de revision."
+        }
+      ],
+      "hazards": [
+        {
+          "id": "h15-w-left",
+          "type": "WATER",
+          "side": "LEFT",
+          "startDistanceFromTee": 20,
+          "endDistanceFromTee": 111,
+          "lateralStart": 8,
+          "lateralEnd": 90,
+          "carryRequired": 111,
+          "severity": "EXTREME",
+          "penaltyCost": 1,
+          "recoveryDifficulty": "NO_RECOVERY",
+          "notes": "Distancia derivada de la marca que el jugador puso en su app GPS: yardaje del hoyo menos la burbuja retículo-green. El LADO viene de la imagen satelital. La distancia LATERAL desde el centro es una estimacion conservadora, NO medida."
+        }
+      ],
+      "forcedCarry": 111,
+      "layupZones": [],
+      "preferredLandingZones": [],
+      "elevationChangeYards": 0,
+      "strategicNotes": "App GPS del jugador: par 3, HCP 10, 149 yd blancas. AGUA CARGADA: Par 3 sobre el agua: hay que cruzarla, termina a 111 yd del tee. Hazards de green: lectura satelital PENDIENTE de revision.",
+      "dataQuality": "PARTIAL",
+      "teeCoordinates": null,
+      "greenCenter": null,
+      "greenPolygon": [],
+      "fairwayPolygon": [],
+      "referenceImage": null
+    },
+    {
+      "holeNumber": 16,
+      "par": 5,
+      "handicapIndex": 4,
+      "whiteTeeYardage": 484,
+      "yardageByTee": {
+        "blancas": 484
+      },
+      "fairwayWidthYards": 32,
+      "fairwayStart": 160,
+      "fairwayEnd": 429,
+      "greenWidth": 30,
+      "greenDepth": 28,
+      "greenSafeSide": "LONG",
+      "greenBadSide": "SHORT",
+      "greensideHazards": [
+        {
+          "id": "h16-g-w-short",
+          "type": "WATER",
+          "side": "SHORT",
+          "severity": "EXTREME",
+          "penaltyCost": 1,
+          "recoveryDifficulty": "NO_RECOVERY",
+          "notes": "Lectura satelital de la captura GPS del jugador. PENDIENTE de revision."
+        },
+        {
+          "id": "h16-g-b-left",
+          "type": "BUNKER",
+          "side": "LEFT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lectura satelital de la captura GPS del jugador. PENDIENTE de revision."
+        }
+      ],
+      "hazards": [],
+      "forcedCarry": null,
+      "layupZones": [],
+      "preferredLandingZones": [],
+      "elevationChangeYards": 0,
+      "strategicNotes": "App GPS del jugador: par 5, HCP 4, 484 yd blancas. Hazards de green: lectura satelital PENDIENTE de revision. Geometria de calle (agua y bunkers de pegada) PENDIENTE.",
+      "dataQuality": "PARTIAL",
+      "teeCoordinates": null,
+      "greenCenter": null,
+      "greenPolygon": [],
+      "fairwayPolygon": [],
+      "referenceImage": null
+    },
+    {
+      "holeNumber": 17,
+      "par": 4,
+      "handicapIndex": 12,
+      "whiteTeeYardage": 373,
+      "yardageByTee": {
+        "blancas": 373
+      },
+      "fairwayWidthYards": 32,
+      "fairwayStart": 149,
+      "fairwayEnd": 318,
+      "greenWidth": 30,
+      "greenDepth": 28,
+      "greenSafeSide": "LONG",
+      "greenBadSide": "SHORT",
+      "greensideHazards": [
+        {
+          "id": "h17-g-b-short",
+          "type": "BUNKER",
+          "side": "SHORT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lectura satelital de la captura GPS del jugador. PENDIENTE de revision."
+        }
+      ],
+      "hazards": [],
+      "forcedCarry": null,
+      "layupZones": [],
+      "preferredLandingZones": [],
+      "elevationChangeYards": 0,
+      "strategicNotes": "App GPS del jugador: par 4, HCP 12, 373 yd blancas. Hazards de green: lectura satelital PENDIENTE de revision. Geometria de calle (agua y bunkers de pegada) PENDIENTE.",
+      "dataQuality": "PARTIAL",
+      "teeCoordinates": null,
+      "greenCenter": null,
+      "greenPolygon": [],
+      "fairwayPolygon": [],
+      "referenceImage": null
+    },
+    {
+      "holeNumber": 18,
+      "par": 5,
+      "handicapIndex": 14,
+      "whiteTeeYardage": 485,
+      "yardageByTee": {
+        "blancas": 485
+      },
+      "fairwayWidthYards": 32,
+      "fairwayStart": 160,
+      "fairwayEnd": 430,
+      "greenWidth": 30,
+      "greenDepth": 28,
+      "greenSafeSide": "LONG",
+      "greenBadSide": "LEFT",
+      "greensideHazards": [
+        {
+          "id": "h18-g-b-left",
+          "type": "BUNKER",
+          "side": "LEFT",
+          "severity": "MEDIUM",
+          "penaltyCost": 0,
+          "recoveryDifficulty": "NORMAL",
+          "notes": "Lectura satelital de la captura GPS del jugador. PENDIENTE de revision."
+        }
+      ],
+      "hazards": [],
+      "forcedCarry": null,
+      "layupZones": [],
+      "preferredLandingZones": [],
+      "elevationChangeYards": 0,
+      "strategicNotes": "App GPS del jugador: par 5, HCP 14, 485 yd blancas. Hazards de green: lectura satelital PENDIENTE de revision. Geometria de calle (agua y bunkers de pegada) PENDIENTE.",
+      "dataQuality": "PARTIAL",
+      "teeCoordinates": null,
+      "greenCenter": null,
+      "greenPolygon": [],
+      "fairwayPolygon": [],
+      "referenceImage": null
+    }
+  ],
+  "dataQuality": "PARTIAL",
+  "source": "BUNDLED",
+  "notes": "Par, handicap y yardaje de blancas de los 18 hoyos, leidos de las capturas de la app GPS del jugador. Par 72, 6594 yd. AGUA CARGADA en los hoyos 5, 10, 11, 13 y 15, con las distancias que el jugador marco en su app; el lado sale de satelite y la distancia lateral al centro es una estimacion conservadora sin medir. Hoyos 16, 17 y 18: el jugador marco puntos pero falta confirmar que son. El resto de los hoyos no tiene geometria de calle: ahi el motor recomienda approach pero no opina del tee.",
+  "updatedAt": "2026-08-27T00:00:00.000Z"
+}
