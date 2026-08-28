@@ -7,7 +7,7 @@ const ITEMS = [
   { href: "/", label: "Home", icon: "◆" },
   { href: "/play", label: "Play", icon: "▶" },
   { href: "/courses", label: "Courses", icon: "⛳" },
-  { href: "/rounds", label: "Rounds", icon: "▤" },
+  { href: "/caddie", label: "Caddie", icon: "◎" },
   { href: "/my-game", label: "My Game", icon: "◈" },
 ];
 
