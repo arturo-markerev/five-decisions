@@ -51,6 +51,10 @@ export default function HomePage() {
         </Link>
       )}
 
+      <Link href="/caddie" className="btn btn-secondary mb-4">
+        CADDIE · READ THE HOLE
+      </Link>
+
       <div className="grid grid-cols-2 gap-2 mb-6">
         <Link href="/courses" className="btn btn-secondary btn-sm">
           COURSES
