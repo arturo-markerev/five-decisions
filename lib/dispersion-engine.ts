@@ -75,16 +75,31 @@ function missBias(club: Club): { lateral: number; longitudinal: number } {
   }
 }
 
+/**
+ * Driver desde el piso NO es el mismo palo que desde el tee.
+ * Sin esto el motor recomienda driver en el segundo golpe de todos los par 5,
+ * que para un handicap 18 es un consejo malo: pierde distancia y sobre todo
+ * abre muchisimo la dispersion. Los numeros son ESTIMATE.
+ */
+function offTheDeck(club: Club, lie: Lie): { distance: number; dispersion: number } {
+  if (lie === "TEE") return { distance: 1, dispersion: 1 };
+  if (club.category === "DRIVER") return { distance: 0.94, dispersion: 1.7 };
+  if (club.category === "FAIRWAY_WOOD") return { distance: 0.98, dispersion: 1.15 };
+  return { distance: 1, dispersion: 1 };
+}
+
 export function buildDispersion(club: Club, opts: DispersionOptions): DispersionSample[] {
   const distFactor = LIE_DISTANCE_FACTOR[opts.lie];
   const dispFactor = LIE_DISPERSION_FACTOR[opts.lie];
 
-  const fullDistance = club.planningDistance * distFactor;
+  const deck = offTheDeck(club, opts.lie);
+  const fullDistance = club.planningDistance * distFactor * deck.distance;
   const nominal = opts.targetDistance != null ? Math.min(opts.targetDistance, fullDistance) : fullDistance;
 
   // Golpe parcial: menos distancia, algo menos de dispersion lateral.
   const partialRatio = fullDistance > 0 ? Math.min(1, nominal / fullDistance) : 1;
-  const lateralScale = dispFactor * (0.55 + 0.45 * partialRatio);
+  const lateralScale = dispFactor * deck.dispersion * (0.55 + 0.45 * partialRatio);
+  const longScale = dispFactor * deck.dispersion;
 
   const bias = missBias(club);
   const aim = opts.aimOffset ?? 0;
@@ -94,8 +109,8 @@ export function buildDispersion(club: Club, opts: DispersionOptions): Dispersion
     const lo = AXIS_OFFSETS[i];
     const longitudinal =
       lo < 0
-        ? lo * club.shortDispersionYards * dispFactor * partialRatio
-        : lo * club.longDispersionYards * dispFactor * partialRatio;
+        ? lo * club.shortDispersionYards * longScale * partialRatio
+        : lo * club.longDispersionYards * longScale * partialRatio;
 
     for (let j = 0; j < AXIS_OFFSETS.length; j++) {
       const la = AXIS_OFFSETS[j];
