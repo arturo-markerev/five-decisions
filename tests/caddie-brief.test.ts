@@ -70,3 +70,20 @@ describe("caddie brief — el inventario del hoyo", () => {
     expect(b.hazards.every((h) => h.atYards == null)).toBe(true);
   });
 });
+
+describe("driver desde el piso", () => {
+  it("no recomienda driver en el segundo golpe de un par 5 largo", () => {
+    // Sin este ajuste el motor elegia driver desde la calle, que para un H18
+    // pierde distancia y abre la dispersion muchisimo mas que un wood.
+    const b = buildCaddieBrief({ profile: profile(), hole: hole(16), flagPosition: "UNKNOWN" });
+    const desdeLaCalle = b.shots.filter((s) => s.fromLie === "FAIRWAY");
+    for (const s of desdeLaCalle) {
+      expect(s.club.toUpperCase()).not.toContain("DRIVER");
+    }
+  });
+
+  it("el driver sigue siendo valido desde el tee", () => {
+    const b = buildCaddieBrief({ profile: profile(), hole: hole(1), flagPosition: "UNKNOWN" });
+    expect(b.shots[0].fromLie).toBe("TEE");
+  });
+});
