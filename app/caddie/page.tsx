@@ -64,20 +64,25 @@ export default function CaddiePage() {
           <div className="eyebrow">Caddie · read only</div>
           <MockBadge quality={brief.dataQuality} />
         </div>
-        <select
-          className="text-input mb-3"
-          value={courseId}
-          onChange={(e) => {
-            setCourseId(e.target.value);
-            setHoleIndex(0);
-          }}
-        >
+        {/* Botones a la vista: un select sin flecha parecia un titulo y el
+            jugador no encontraba el segundo campo. */}
+        <div className="grid gap-2 mb-3" style={{ gridTemplateColumns: `repeat(${Math.min(courses.length, 2)}, minmax(0, 1fr))` }}>
           {courses.map((c) => (
-            <option key={c.id} value={c.id}>
-              {c.name}
-            </option>
+            <button
+              key={c.id}
+              className="tap"
+              style={{ minHeight: 52, fontSize: 13, lineHeight: 1.2 }}
+              data-selected={courseId === c.id}
+              onClick={() => {
+                setCourseId(c.id);
+                setHoleIndex(0);
+                setFlag("UNKNOWN");
+              }}
+            >
+              {c.name.replace(/^Club de Golf /, "")}
+            </button>
           ))}
-        </select>
+        </div>
 
         <div className="flex items-end justify-between">
           <div>
